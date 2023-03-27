@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
         Fork[] forks = { new Fork(1), new Fork(2), new Fork(3), new Fork(4), new Fork(5) };
 
-        Philosopher p1 = new Philosopher(1, new ArrayList<>(List.of(forks[0], forks[4])));
+        Philosopher p1 = new Philosopher(1, new ArrayList<>(List.of(forks[4], forks[0])));
         Philosopher p2 = new Philosopher(2, new ArrayList<>(List.of(forks[0], forks[1])));
         Philosopher p3 = new Philosopher(3, new ArrayList<>(List.of(forks[1], forks[2])));
         Philosopher p4 = new Philosopher(4, new ArrayList<>(List.of(forks[2], forks[3])));
