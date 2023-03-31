@@ -35,6 +35,7 @@ public class PhilosopherAction {
                 int philosopherId = philosopher.getId();
                 Fork rightFork = philosopher.getRightFork();
                 Fork leftFork = philosopher.getLeftFork();
+
                 if (rightFork.isTaken().get() && rightFork.getPhilosopherId().get() == philosopherId &&
                         leftFork.isTaken().get() && leftFork.getPhilosopherId().get() == philosopherId
                 ) {
@@ -46,6 +47,7 @@ public class PhilosopherAction {
                         throw new RuntimeException(e);
                     }
                     System.out.println("Philosopher " + philosopherId + " finished eating");
+
                     rightFork.setPhilosopherId(new AtomicInteger(0));
                     rightFork.setIsTaken(new AtomicBoolean(false));
                     leftFork.setPhilosopherId(new AtomicInteger(0));
