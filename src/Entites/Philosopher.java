@@ -1,8 +1,17 @@
 package Entites;
 
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Philosopher {
+    @Setter(AccessLevel.NONE)
     private final int id;
+    @Setter(AccessLevel.NONE)
     private final Fork rightFork;
+    @Setter(AccessLevel.NONE)
     private final Fork leftFork;
     private boolean hasEaten = false;
 
@@ -10,25 +19,5 @@ public class Philosopher {
         this.id = id;
         this.rightFork = rightFork;
         this.leftFork = leftFork;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public Fork getRightFork() {
-        return rightFork;
-    }
-
-    public Fork getLeftFork() {
-        return leftFork;
-    }
-
-    public boolean isHasEaten() {
-        return hasEaten;
-    }
-
-    public void setHasEaten(boolean hasEaten) {
-        this.hasEaten = hasEaten;
     }
 }
